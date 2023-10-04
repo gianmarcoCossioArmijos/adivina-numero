@@ -10,7 +10,7 @@ const App = () => {
 
   const handleChange = (event) => {
 
-    const resp = Math.round(Number(event.target.value));
+    const resp = event.target.value;
     setRespuesta(resp);
   }
 
@@ -20,7 +20,7 @@ const App = () => {
     console.log(respuesta);
     console.log(aleatorio);
 
-    if (respuesta === aleatorio) {
+    if (Math.round(Number(respuesta)) === aleatorio) {
 
       setNumero(respuesta);
       setContador(0);
@@ -59,7 +59,7 @@ const App = () => {
             className='w-full md:w-1/2 lg:w-1/3 md:mx-auto flex flex-col gap-4 text-lg'>
 
           <label className='flex flex-col gap-4'>
-            Que numero crees que es?
+            Que numero crees que es ( del 0 al 9 )?
             <input
               type="number"
               name='repuesta'
